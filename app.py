@@ -158,14 +158,14 @@ def render_chart(df: pd.DataFrame, top_5):
                     ),
                     axis=alt.Axis(format=".2f", tickCount=6),
                 ),
-                color=alt.Color("team_name:N", title="팀명"),
+                color=alt.Color("team_name:N", title="팀"),
             )
 
             line = base.mark_line()
             point = base.mark_point(filled=True, size=60).encode(
                 tooltip=[
                     alt.Tooltip("date:T", title="날짜", format="%Y-%m-%d"),
-                    alt.Tooltip("team_name:N", title="팀명"),
+                    alt.Tooltip("team_name:N", title="팀"),
                     alt.Tooltip("score:Q", title="점수"),
                 ]
             )
